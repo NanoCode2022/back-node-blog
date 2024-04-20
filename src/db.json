@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "password1",
+      "email": "user1@example.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2",
+      "email": "user2@example.com",
+      "role": "user"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Introduction to React",
+      "content": "React is a JavaScript library for building user interfaces. It allows you to compose complex UIs from small and isolated pieces of code called components. These components manage their own state, which results in more predictable and maintainable code.",
+      "authorId": 1,
+      "date": "2024-02-23",
+      "tags": [
+        "react",
+        "javascript",
+        "frontend"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "React Hooks Tutorial",
+      "content": "React Hooks provide a way to use state and other React features without writing a class. They allow you to reuse stateful logic across different components. Hooks are functions that let you hook into React state and lifecycle features from function components. useState is a Hook that lets you add React state to function components.",
+      "authorId": 2,
+      "date": "2024-02-24",
+      "tags": [
+        "react",
+        "hooks",
+        "state management"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Building a Blog with React and Node.js",
+      "content": "In this tutorial, we will learn how to build a blog application using React on the frontend and Node.js on the backend. We will use Express.js as our server framework and MongoDB as the database. The frontend will be built using React, and we will cover topics such as routing, fetching data from the server, and handling forms.",
+      "authorId": 1,
+      "date": "2024-02-25",
+      "tags": [
+        "react",
+        "node.js",
+        "fullstack"
+      ]
+    }
+  ]
+}
