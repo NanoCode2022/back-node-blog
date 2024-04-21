@@ -23,6 +23,32 @@ class BlogModel {
       console.log(err)
     }
   }
+
+  static async createBlog(input) {
+    try {
+      blogPosts.push(input)
+      const response = 'blog was created successfully'
+      return response
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  static async deleteBlog(id) {
+    try {
+
+      const findBlog = blogPosts.findIndex(blog => blog.id == id);
+      console.log(findBlog)
+
+      if (findBlog === -1) { return false }
+
+      blogPosts.splice(findBlog, 1)
+      return true
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
 }
 
 

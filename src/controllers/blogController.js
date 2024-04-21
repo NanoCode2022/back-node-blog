@@ -25,6 +25,36 @@ class BlogController {
     }
   }
 
+  async createBlog(req, res) {
+    try {
+      const result = req.body
+      console.log(result)
+      if (Object.keys(result).length === 0) {
+
+        return res.status(400).json({ message: 'Error' })
+      }
+      const newBlog = await BlogModel.createBlog(result)
+      res.json(newBlog)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  async deleteBlog(req, res) {
+    const id = req.params.id
+    console.log(id)
+    const result = await BlogModel.deleteBlog(id)
+    console.log(result)
+
+    if (result) {
+
+      return res.status(200).json({ message: 'Blog deleted successfully' })
+    }
+
+    return res.status(404).json({ message: 'Blog not found' })
+
+  }
+
 }
 
 

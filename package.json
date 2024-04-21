@@ -4,7 +4,7 @@
   "description": "backend API appBlog",
   "main": "src/app.js",
   "scripts": {
-    "dev": "node --watch ./src/app.js"
+    "dev": "nodemon ./src/app.js"
   },
   "type": "module",
   "author": "nahuel_dev",
