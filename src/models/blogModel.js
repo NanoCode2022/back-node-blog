@@ -96,12 +96,16 @@ class BlogModel {
   static async deleteBlog(id) {
     try {
 
-      const findBlog = blogPosts.findIndex(blog => blog.id == id);
-      console.log(findBlog)
+      const [find_blog] = await connection.query(`SELECT id FROM posts WHERE id = ?`, [id])
+      console.log(find_blog)
 
-      if (findBlog === -1) { return false }
 
-      blogPosts.splice(findBlog, 1)
+      if (find_blog.length === 0) return false
+
+      const [result] = await connection.query(`DELETE FROM posts WHERE id = ?`, [id])
+
+      if (result.affectedRows === 0) return false
+
       return true
 
     } catch (err) {
